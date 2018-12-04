@@ -1,3 +1,7 @@
+#include "common.h"
+
+USESTD 
+
 class Solution {
 public:
     int countPrimes(int n) {
