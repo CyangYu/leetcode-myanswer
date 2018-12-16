@@ -7,7 +7,7 @@ public:
     inline int average(vector<vector<int>> &M, size_t row, size_t col, int r, int c)
     {
         int sum = 0, count = 0;
-        static int _r = 0, _c = 0;
+        int _r = 0, _c = 0;
         
         for (int i = 0; i < 3; i++) {
             _r = r - 1 + i;

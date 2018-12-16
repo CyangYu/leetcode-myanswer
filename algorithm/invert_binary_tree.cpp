@@ -23,7 +23,7 @@ public:
                 q.push(node->left);
             
             if (node->right != nullptr)
-                q.psuh(node->right);
+                q.push(node->right);
             
             q.pop();
         }

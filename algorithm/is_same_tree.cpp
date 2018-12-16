@@ -1,14 +1,7 @@
-#include <vector>
-#include <queue>
+#include "node.h"
+#include "common.h"
 
-using namespace std;
-
-typedef struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-} TreeNode;
+USESTD
 
 class Solution {
 public:

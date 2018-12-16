@@ -14,9 +14,10 @@
 #include <random>
 #include <set>
 #include <stack>
+#include <list>
 #include <vector>
 #include <algorithm>
-
+#include <functional>
 #include <iostream>
 
 #define USESTD using namespace std;
