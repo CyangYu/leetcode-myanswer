@@ -1,7 +1,6 @@
-#include <vector>
-#include <iostream>
+#include "common.h"
 
-using namespace std;
+USESTD
 
 class Solution {
 public:
@@ -10,7 +9,7 @@ public:
         auto sum = 0;
 
         for (int i = 0; i < size; i++) 
-            sum += nums[i];            
+            sum += nums[i];     a       
         
         return (1  + size) * size / 2 - sum;
     }
