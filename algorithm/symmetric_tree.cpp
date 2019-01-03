@@ -7,7 +7,7 @@ public:
         if (left == nullptr && right == nullptr)
             return true;
 
-        if (left == nullptr || right == nullptr) {
+        if (left == nullptr || right == nullptr)
             return false;
 
         return (left->val == right->val) && 
