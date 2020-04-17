@@ -39,10 +39,3 @@ public:
         return current;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    cout << solution.countAndSay(atoi(argv[1])) << endl;
-    return 0;
-}

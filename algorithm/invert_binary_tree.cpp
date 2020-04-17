@@ -14,11 +14,8 @@ public:
         
         while (!q.empty()) {
             node = q.front();
-            
-            TreeNode *temp = node->left;
-            node->left = node->right;
-            node->right = temp;
-            
+            swap(node->left, node->right);
+
             if (node->left != nullptr)
                 q.push(node->left);
             
