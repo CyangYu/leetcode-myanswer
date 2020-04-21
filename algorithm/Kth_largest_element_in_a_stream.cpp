@@ -43,40 +43,8 @@ public:
         return *iter;
     }
 
-    void print()
-    {
-        int count = 0;
-        for (auto iter = m_list.rbegin(); iter != m_list.rend(); iter++) {
-            cout << '(' << *iter << ',' << ++count << ')' << ' ';
-        }
-
-        cout << endl;
-    }
-
 private:
     int m_k;
     int m_size;
     list<int> m_list;
 };
-
-int main(int argc, char *argv[])
-{
-    vector<int> arr = {4, 5, 8, 2};
-    KthLargest kthLargest = KthLargest(3, arr);
-    kthLargest.print();
-
-    cout << kthLargest.add(3) << endl;
-    kthLargest.print();
-
-    cout << kthLargest.add(5) << endl;
-    kthLargest.print();
-
-    cout << kthLargest.add(10) << endl;
-    kthLargest.print();
-
-    cout << kthLargest.add(9) << endl;
-    kthLargest.print();
-
-    cout << kthLargest.add(4) << endl;
-    kthLargest.print();
-}

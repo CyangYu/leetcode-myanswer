@@ -6,18 +6,50 @@ class Solution {
 public:
     vector<int> sortedSquares(vector<int>& A) {
         auto size = A.size();
-        vector<int> result(A);
+        vector<int> v(size);
 
-        int pos_idx = 0;
+        int index = size - 1;
+        int left = 0, right = size - 1;
 
-        for (int i = 0; i < size; i++) {
-            if (A[i] >= 0) {
-                pos_idx = i;
+        while (left < right && A[left] < 0 && A[right] >= 0) {
+            int left_sqr = A[left] * A[left];
+            int right_sqr = A[right] * A[right];
+
+            if (left_sqr > right_sqr) {
+                v[index--] = left_sqr;
+                left++;
+            } else {
+                v[index--] = right_sqr;
+                right--;
+            }
+        } 
+        
+       while (A[left] < 0 && left < size) {
+            v[index--] = A[left] * A[left];
+
+            if (++left == size) {
                 break;
             }
         }
 
-        for (int j = pos_idx; j < size; j++)
-            
+        while (A[right] >= 0 && right >= 1) {
+            v[index--] = A[right] * A[right];
+
+            if (--right == -1) {
+                break;
+            }
+        }
+
+        return v;     
     }
 };
+
+int main(int argc, char *argv[])
+{
+    vector<int> v = {-7,-3,2,3,11};
+    Solution solution;
+
+    vector<int> v0 = solution.sortedSquares(v);
+    cout << v0[0];
+    cout << v0.size();
+}
