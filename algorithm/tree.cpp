@@ -144,6 +144,9 @@ void Tree::preorder_iter(TreeNode *root, Visit visit)
         if (s.empty())
             return;
         
+
+
+        
         node = s.top();
         s.pop();
         node = node->right;

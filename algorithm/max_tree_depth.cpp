@@ -1,7 +1,7 @@
 #include "node.h"
 #include "common.h"
 
-USESTDS
+USESTD
 
 class Solution {
 public:

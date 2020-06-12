@@ -60,26 +60,3 @@ public:
         return true;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    ListNode *l1 = new ListNode(1,
-                   new ListNode(0,
-                   new ListNode(1, NULL)));
-
-    Solution solution;
-    if (solution.isPalindrome(l1) == true)
-        puts("true\n");
-    else
-        puts("false\n");
-
-    ListNode *temp1 = l1, *temp2 = l1;
-
-    while (temp1 != NULL) {
-        temp2 = temp1->next;
-        delete temp1;
-        temp1 = temp2;
-    } 
-
-    return 0;
-}
