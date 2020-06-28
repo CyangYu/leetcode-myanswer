@@ -35,10 +35,3 @@ public:
         return hex;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    cout << solution.toHex(atoi(argv[1])) << endl;
-    return 0;
-}

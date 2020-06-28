@@ -18,10 +18,3 @@ public:
         return comp;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    cout << solution.findComplement(atoi(argv[1]));
-    return 0;
-}

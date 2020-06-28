@@ -1,6 +1,6 @@
-#include <cmath>
-#include <cstdlib>
-#include <iostream>
+#include "common.h"
+
+USESTD 
 
 class Solution {
 public:
@@ -20,12 +20,3 @@ public:
             return (x < 0) ? -r : r;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution s;
-    int x = std::atoi(argv[1]);
-    long long r = s.reverse(x);
-    std::cout << r << std::endl;
-    return 0;
-}

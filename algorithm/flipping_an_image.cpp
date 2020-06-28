@@ -21,23 +21,3 @@ public:
         return A;     
     }
 };
-
-int main(int argc, char *argv[])
-{
-    vector<vector<int>> A = {
-        { 1, 1, 0, 0 }, 
-        { 1, 0, 0, 1 }, 
-        { 0, 1, 1, 1 }, 
-        { 1, 0, 1, 0 } 
-    };
-
-    Solution solution;
-    A = solution.flipAndInvertImage(A);
-    for (int r = 0; r < A.size(); r++) {
-        for (int c = 0; c < A[0].size(); c++)
-            cout << A[r][c] << ' ';
-        cout << '\n';
-    }
-
-    return 0;
-}

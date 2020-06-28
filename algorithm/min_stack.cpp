@@ -1,6 +1,6 @@
-#include <iostream>
+#include "common.h"
 
-using namespace std;
+USESTD
 
 class MinStack {
 public:
@@ -54,18 +54,3 @@ private:
     size_t m_size;
     size_t m_capacity = 64;
 };
-
-int main(int argc, char *argv[])
-{
-    MinStack *minStack = new MinStack();
-    minStack->push(-2);
-    minStack->push(0);
-    minStack->push(-3);
-    cout << minStack->getMin() << endl;
-    minStack->pop();
-    cout << minStack->top() << endl;
-    minStack->getMin();
-    delete minStack;
-    minStack = nullptr;
-    return 0;
-}

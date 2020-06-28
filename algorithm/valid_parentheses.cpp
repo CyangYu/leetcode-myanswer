@@ -1,6 +1,6 @@
-#include <stack>
-#include <string>
-#include <iostream>
+#include "common.h"
+
+USESTD
 
 class Solution {
 public:
@@ -42,17 +42,3 @@ public:
         return parentheses.empty() ? true : false;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    std::string str;
-
-    std::getline(std::cin, str);
-    if (solution.isValid(str))
-        std::cout << "Valid" << std::endl;
-    else
-        std::cout << "Invalid" << std::endl;
-
-    return 0;
-}

@@ -31,11 +31,3 @@ public:
 		return result;
     }
 };
-
-int main(int argc, char *argv[])
-{
-	Solution solution;
-	cout << argv[1] << endl;
-	cout << solution.reverseWords(string(argv[1])) << endl;
-	return 0;
-}

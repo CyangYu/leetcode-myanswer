@@ -1,9 +1,6 @@
-#include <cstdlib>
-#include <stack>
-#include <string>
-#include <iostream>
+#include "common.h"
 
-using namespace std;
+USESTD 
 
 class Solution {
 public:
@@ -37,11 +34,3 @@ public:
         return res;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    string res = solution.convertToTitle(std::atoi(argv[1]));
-    cout << res << endl;
-    return 0;
-}

@@ -1,8 +1,6 @@
-#include <vector>
-#include <algorithm>
-#include <iostream>
+#include "common.h"
 
-using namespace std;
+USESTD 
 
 class Solution {
 public:
@@ -20,15 +18,3 @@ public:
         }
     }
 };
-
-int main()
-{
-    Solution solution;
-    vector<int> vec = {1, 2, 3, 4, 5, 6, 7};
-    solution.rotate(vec, 3);
-    for (int i = 0; i < vec.size(); i++) {
-        printf("%d\n", vec[i]);
-    }
-
-    return 0;
-}

@@ -1,6 +1,6 @@
-#include <cstdlib>
-#include <iostream>
-#include <stdio.h>
+#include "common.h"
+
+USESTD 
 
 class Solution {
 public:
@@ -19,10 +19,3 @@ public:
         return num;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    std::cout << solution.addDigits(std::atoi(argv[1])) << std::endl;
-    return 0;
-}

@@ -41,15 +41,3 @@ public:
         return valid_emails.size();
     }
 };
-
-int main(int argc, char *argv[])
-{
-    vector<string> emails = {
-        "djqxlmyn.pcy.o.rnk.xugrsxcshv+av.t.pf+ei.vyoater+j@d.grulfgk.com",
-        "djqxlmyn.pcy.o.rnk.xugrsxcshv+g.ebdjo.f+r.v+pac+d.f.z@d.grulfgk.com"
-    };
-
-    Solution solution;
-    cout << solution.numUniqueEmails(emails) << endl;
-    return 0;
-}

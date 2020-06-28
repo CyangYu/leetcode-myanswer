@@ -1,5 +1,6 @@
-#include <string>
-#include <iostream>
+#include "common.h"
+
+USESTD 
 
 class Solution {
 public:
@@ -52,12 +53,3 @@ public:
         return number;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    std::string roman;
-    std::getline(std::cin, roman); 
-    std::cout << solution.romanToInt(roman) << std::endl;
-    return 0;
-}

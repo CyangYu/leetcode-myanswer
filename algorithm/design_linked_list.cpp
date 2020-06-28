@@ -112,27 +112,3 @@ private:
     Node *tail;
     size_t len;
 };
-
-/**
- * Your MyLinkedList object will be instantiated and called as such:
- * MyLinkedList obj = new MyLinkedList();
- * int param_1 = obj.get(index);
- * obj.addAtHead(val);
- * obj.addAtTail(val);
- * obj.addAtIndex(index,val);
- * obj.deleteAtIndex(index);
- */
-
-int main(int argc, char *argv[])
-{
-    MyLinkedList *list = new MyLinkedList;
-    cout << list->get(0) << endl;
-    list->addAtIndex(1, 2);
-    cout << list->get(0) << endl;
-    cout << list->get(1) << endl;
-    list->addAtIndex(0, 1);
-    cout << list->get(0) << endl;
-    cout << list->get(1) << endl;
-    delete list;
-    return 0;
-}

@@ -21,15 +21,3 @@ public:
         return false;  
     }
 };
-
-int main(int arg, char *argv[])
-{
-    vector<int> v = { 1,2,3,4,5,6,7,8,9,9 };
-    Solution solution;
-    bool ret = solution.containsNearbyDuplicate(v, 3);
-    if (ret == true) 
-        cout << "Yes" << endl;
-    else 
-        cout << "No" << endl;
-    return 0;
-}

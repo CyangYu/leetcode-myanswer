@@ -1,7 +1,6 @@
-#include <vector>
-#include <stdio.h>
+#include "common.h"
 
-using namespace std;
+USESTD 
 
 class Solution {
 public:
@@ -26,23 +25,3 @@ public:
         return matrix;
     }
 };
-
-int main()
-{
-    int array[1][4] = { {1, 2, 3, 4} };
-    int array2[2][2] = { 0 };
-
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++) {
-            array2[i][j] = array[(i + j) / 4][(i + j) % 4];
-        }
-    }
-
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++) {
-            printf("%d\n", array2[i][j]);
-        }
-    }
-
-    return 0;
-}

@@ -1,8 +1,6 @@
-#include <limits.h>
-#include <stdio.h>
-#include <string>
+#include "common.h"
 
-using namespace std;
+USESTD
 
 class Solution {
 public:
@@ -34,11 +32,3 @@ public:
         return min == INT_MAX ? -1 : min;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    int i = solution.firstUniqChar(string(argv[1]));
-    printf("%d\n", i);
-    return 0;
-}

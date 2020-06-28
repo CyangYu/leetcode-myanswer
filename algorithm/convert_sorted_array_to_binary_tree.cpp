@@ -41,24 +41,3 @@ void inorderTravesTree(TreeNode *root, function<void(TreeNode *)> func)
     func(root);
     inorderTravesTree(root->right, func);
 }
-
-int main(int argc, char *argv[])
-{
-    vector<int> nums = { -10, -3, 0, 5, 9 };
-
-    Solution solution;
-    TreeNode *root = solution.sortedArrayToBST(nums);
-
-    vector<TreeNode *> v;
-    inorderTravesTree(root, [&](TreeNode *node) -> void {
-        cout << node->val << ' ';
-        v.push_back(node);
-    });
-
-    for (auto &n : v) {
-        delete n;
-        n = nullptr;
-    }
-
-    return 0;
-}

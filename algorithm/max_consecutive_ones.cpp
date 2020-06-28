@@ -27,11 +27,3 @@ public:
         return maxCount;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    vector<int> arr = { 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0 };
-    Solution solution;
-    cout << solution.findMaxConsecutiveOnes(arr) << endl;
-    return 0;
-}

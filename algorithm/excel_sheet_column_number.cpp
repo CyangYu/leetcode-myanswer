@@ -1,7 +1,6 @@
-#include <cmath>
-#include <iostream>
+#include "common.h"
 
-using namespace std;
+USESTD 
 
 class Solution {
 public:
@@ -15,11 +14,3 @@ public:
         return result;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-
-    cout << solution.titleToNumber(argv[1]) << endl;
-    return 0;    
-}

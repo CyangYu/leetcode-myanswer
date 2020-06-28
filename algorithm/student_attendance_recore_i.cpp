@@ -40,10 +40,3 @@ public:
         return acount <= 1;     
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    cout << solution.checkRecord(string(argv[1])) << endl;
-    return 0;
-}

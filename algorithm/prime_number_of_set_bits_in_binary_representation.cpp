@@ -1,5 +1,5 @@
-#include "node.h"
 #include "common.h"
+#include "node.h"
 
 USESTD
 
@@ -45,10 +45,3 @@ public:
         return primeCount;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    cout << solution.countPrimeSetBits(atoi(argv[1]), atoi(argv[2]));
-    return 0;
-}

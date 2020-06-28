@@ -19,11 +19,3 @@ public:
         if ()
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    int count = solution.trailingZeroes(atoi(argv[1]));
-    cout << count << endl;
-    return 0;
-}

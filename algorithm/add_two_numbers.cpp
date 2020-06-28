@@ -1,7 +1,7 @@
+#include "common.h"
 #include "node.h"
-#include <vector>
 
-using namespace std;
+USESTD 
 
 class Solution {
 public:

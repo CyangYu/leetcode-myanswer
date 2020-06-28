@@ -1,7 +1,6 @@
-#include <cstdlib>
-#include <iostream>
+#include "common.h"
 
-using namespace std;
+USESTD 
 
 class Solution {
 public:
@@ -21,15 +20,3 @@ public:
         return (n == 1);
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-
-    if (solution.isHappy(std::atoi(argv[1])) == true)
-        cout << "Yes" << endl;
-    else
-        cout << "No" << endl;
-
-    return 0;
-}

@@ -1,9 +1,6 @@
-#include <string>
-#include <algorithm>
-#include <iostream>
-#include <stdio.h>
+#include "common.h"
 
-using namespace std;
+USESTD 
 
 class Solution {
 public:
@@ -41,15 +38,3 @@ public:
         return result;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    string str1, str2;
-    Solution solution;
-
-    getline(cin, str1);
-    getline(cin, str2);
-    string result = solution.addBinary(str1, str2);
-    cout << result << endl;
-    return 0;
-}

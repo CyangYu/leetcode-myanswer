@@ -1,11 +1,7 @@
-#include <stdio.h>
+#include "common.h"
+#include "node.h"
 
-typedef struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x, ListNode *node) : val(x), next(node) {}
-} ListNode;
-
+USESTD 
 
 class Solution {
 public:
@@ -49,35 +45,3 @@ public:
         return min;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    ListNode *l1 = new ListNode(-10,
-                   new ListNode(-9,
-                   new ListNode(-6,
-                   new ListNode(-4,
-                   new ListNode(1,
-                   new ListNode(9,
-                   new ListNode(9, NULL)))))));
-
-    ListNode *l2 = new ListNode(-5,
-                   new ListNode(-3,
-                   new ListNode(0,
-                   new ListNode(7,
-                   new ListNode(8,
-                   new ListNode(8, NULL))))));
-
-    Solution solution;
-    ListNode *list = solution.mergeTwoLists(l1, l2);
-
-    ListNode *temp1 = list, *temp2 = list;
-
-    while (temp1 != NULL) {
-        temp2 = temp1;
-        printf("%d\n", temp1->val);
-        delete temp1;
-        temp1 = temp2->next;
-    } 
-
-    return 0;
-}

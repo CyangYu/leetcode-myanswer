@@ -38,14 +38,3 @@ public:
         fill(p, idx + 1, vec, mid, high);
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    vector<string> vecstr = solution.letterCasePermutation(string(argv[1]));
-    for (auto str : vecstr) {
-        cout << str << endl;
-    }
-
-    return 0;
-}

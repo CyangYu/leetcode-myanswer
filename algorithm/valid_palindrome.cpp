@@ -1,8 +1,6 @@
-#include <cctype>
-#include <string>
-#include <iostream>
+#include "common.h"
 
-using namespace std;
+USESTD
 
 class Solution {
 public:
@@ -26,13 +24,3 @@ public:
         return true;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    if (solution.isPalindrome(string(argv[1])) == true)
-        cout << argv[1] << " is palindrome string" << endl;
-    else
-        cout << argv[1] << " is not palindrome string" << endl;
-    return 0;
-}

@@ -14,11 +14,3 @@ public:
         return nline;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    int line = solution.arrangeCoins(atoi(argv[1]));
-    cout << line << endl;
-    return 0;
-}

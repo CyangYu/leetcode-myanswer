@@ -21,12 +21,3 @@ public:
         return maxSum;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    vector<int> v = { -2, 1 };
-
-    Solution solution;
-    cout << solution.maxSubArray(v) << endl;
-    return 0;
-}
