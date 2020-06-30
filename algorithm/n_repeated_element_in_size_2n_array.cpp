@@ -1,5 +1,5 @@
-#include "node.h"
 #include "common.h"
+#include "node.h"
 
 USESTD
 

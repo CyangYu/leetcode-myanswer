@@ -27,11 +27,3 @@ public:
         return i;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    
-    cout << ret << endl;
-    return 0;
-}

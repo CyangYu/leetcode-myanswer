@@ -52,27 +52,3 @@ private:
     queue<int> pushQueue;
     queue<int> popQueue;
 };
-
-/**
- * Your MyStack object will be instantiated and called as such:
- * MyStack obj = new MyStack();
- * obj.push(x);
- * int param_2 = obj.pop();
- * int param_3 = obj.top();
- * bool param_4 = obj.empty();
- */
-
-int main(int argc, char *argv[])
-{
-    MyStack mystack;
-
-    mystack.push(1);
-    mystack.push(2);
-    mystack.push(3);
-
-    cout << mystack.pop() << endl;
-    cout << mystack.pop() << endl;
-    cout << mystack.pop() << endl;
-    cout << mystack.empty();
-    return 0;
-}

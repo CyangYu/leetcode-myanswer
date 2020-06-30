@@ -43,13 +43,3 @@ public:
         return v;     
     }
 };
-
-int main(int argc, char *argv[])
-{
-    vector<int> v = {-7,-3,2,3,11};
-    Solution solution;
-
-    vector<int> v0 = solution.sortedSquares(v);
-    cout << v0[0];
-    cout << v0.size();
-}

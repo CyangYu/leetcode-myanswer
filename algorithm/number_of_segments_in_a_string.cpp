@@ -25,11 +25,3 @@ public:
         return count;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    int count = solution.countSegments(string(argv[1]));
-    cout << count << endl;
-    return 0;
-}

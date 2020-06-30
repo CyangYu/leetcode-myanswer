@@ -1,22 +1,7 @@
-#include <queue>
-#include <stack>
-#include <vector>
-#include <functional>
+#include "common.h"
+#include "node.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <limits.h>
-
-using namespace std;
-
-typedef struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-
-    TreeNode(int v) : val(v), left(nullptr), right(nullptr) {}
-} TreeNode;
+USESTD 
 
 using Visit = function<void(TreeNode *)>;
 

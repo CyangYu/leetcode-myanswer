@@ -37,18 +37,3 @@ public:
         return begin;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    vector<char> chars = {'a', 'a', 'b', 'b', 'c' };
-
-    Solution solution;
-    cout << solution.compress(chars) << endl;
-
-    for (auto ch : chars) {
-        printf("%c ", ch);
-    }
-
-    putchar('\n');
-    return 0;
-}

@@ -1,8 +1,6 @@
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <iostream>
+#include "common.h"
+
+USESTD 
 
 const int BUFF_LEN = 16;
 
@@ -20,16 +18,3 @@ public:
         return (x >= 0) ? true : false;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    int x = std::atoi(argv[1]);
-
-    if (solution.isPalindrome(x) == true)
-        std::cout << x << " is palindrome" << std::endl;
-    else
-        std::cout << x << " is not palindrome" << std::endl;
-
-    return 0;
-}

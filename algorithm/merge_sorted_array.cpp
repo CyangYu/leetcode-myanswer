@@ -1,7 +1,6 @@
-#include <vector>
-#include <algorithm>
+#include "common.h"
 
-using namespace std;
+USESTD 
 
 class Solution {
 public:

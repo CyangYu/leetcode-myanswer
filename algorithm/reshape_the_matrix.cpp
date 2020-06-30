@@ -1,6 +1,6 @@
-#include <vector>
+#include "common.h"
 
-using namespace std;
+USESTD 
 
 class Solution {
 public:
@@ -16,12 +16,3 @@ public:
         return reshaped;
     }
 };
-
-int main()
-{
-    Solution solution;
-    vector<vector<int>> mat({{1, 2}, {3, 4}});
-    
-    auto mat2 = solution.matrixReshape(mat, 1, 4);
-    return 0;
-}

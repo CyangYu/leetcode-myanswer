@@ -42,14 +42,3 @@ public:
         return result;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    vector<vector<int>> M = { 
-        {1}
-    };
-
-    Solution solution;
-    solution.imageSmoother(M);
-    return 0;
-}

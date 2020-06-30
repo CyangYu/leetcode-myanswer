@@ -24,39 +24,3 @@ void chToHex(byte val, char *dest)
     
     dest[2] = '\0';
 }
-
-void test(int *a)
-{
-    free(a);
-}
-
-int main(void)
-{
-    /*int u;
-    byte a, b, c, d;
-    char sa[3], sb[3], sc[3], sd[3];
-
-    scanf("%d", &u);
-    byte *k = (byte *)&u;
-    a = k[0];
-    b = k[1];
-    c = k[2];
-    d = k[3];
-
-    chToHex(a, sa);
-    chToHex(b, sb);
-    chToHex(c, sc);
-    chToHex(d, sd);
-    printf("%s\n", k);
-    printf("%s %s %s %s\n", sa, sb, sc, sd);
-    */
-
-    int *a = (int *)malloc(sizeof(int));
-    *a = 100;
-    printf("%p %d\n", a, *a);
-
-    test(a);
-    printf("%p %d\n", a, *a);
-    a = nullptr;
-    return 0;    
-}

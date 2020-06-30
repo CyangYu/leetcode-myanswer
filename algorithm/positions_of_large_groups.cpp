@@ -32,17 +32,3 @@ public:
         return result;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    vector<vector<int>> result = solution.largeGroupPositions(string(argv[1]));
-    for (auto res : result) {
-        for (auto num : res) {
-            cout << num << ' ';
-        }
-        cout << endl;
-    }
-
-    return 0;
-}

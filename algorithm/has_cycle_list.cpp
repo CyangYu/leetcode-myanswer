@@ -1,10 +1,7 @@
-#include <stdio.h>
+#include "common.h"
+#include "node.h"
 
-typedef struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-} ListNode;
+USESTD 
 
 class Solution {
 public:
@@ -27,8 +24,3 @@ public:
     return false;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    return 0;
-}

@@ -29,11 +29,3 @@ public:
         return s;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    string s = solution.reverseVowels(string(argv[1]));
-    cout << s << endl;
-    return 0;
-}

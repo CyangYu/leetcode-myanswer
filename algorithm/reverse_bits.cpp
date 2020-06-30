@@ -1,8 +1,6 @@
-#include <cmath>
-#include <string>
-#include <iostream>
+#include "common.h"
 
-using namespace std;
+USESTD
 
 class Solution {
 public:

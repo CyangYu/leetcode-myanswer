@@ -1,10 +1,7 @@
-#include <stdio.h>
+#include "common.h"
+#include "node.h"
 
-typedef struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x, ListNode *node) : val(x), next(node) {}
-} ListNode;
+USESTD 
 
 class Solution {
 public:
@@ -14,16 +11,16 @@ public:
      */
     ListNode *reverse(ListNode *head) {
         // write your code here
-        if(head == NULL)
-            return NULL;
-        ListNode *Next = head->next;
-        head->next = NULL;
-        while(Next != NULL)
+        if(head == nullptr) return nullptr;
+
+        ListNode *next = head->next;
+        head->next = nullptr;
+        while(next != nullptr)
         {
-            ListNode *tmp = Next->next;
-            Next->next = head;
-            head = Next;
-            Next = tmp;
+            ListNode *tmp = next->next;
+            next->next = head;
+            head = next;
+            next = tmp;
         }
         return head;
     }

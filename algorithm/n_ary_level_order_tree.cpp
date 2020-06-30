@@ -2,7 +2,7 @@
 
 USESTD
 
-class Node {
+struct Node {
 public:
     int val;
     vector<Node*> children;
@@ -50,8 +50,3 @@ public:
         return result;
     }
 };
-
-int main(int argc, char *argv[])
-{
-
-}

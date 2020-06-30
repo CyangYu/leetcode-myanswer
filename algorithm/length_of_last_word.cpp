@@ -1,8 +1,6 @@
-#include <string>
-#include <vector>
-#include <iostream>
+#include "common.h"
 
-using namespace std;
+USESTD 
 
 class Solution {
 public:
@@ -31,13 +29,3 @@ public:
         return end - index;
     }
 };
-
-int main(int argc, char *argv[])
-{
-    Solution solution;
-    string str;
-    getline(cin, str);
-    auto length = solution.lengthOfLastWord(str);
-    cout << length << endl;
-    return 0;
-}
