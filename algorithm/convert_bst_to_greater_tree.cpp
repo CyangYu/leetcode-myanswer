@@ -14,7 +14,7 @@ public:
         traverse(root, v);
 
         for (int i = v.size() - 1; i >= 1; i--) {
-            v[i - 1]->val += + v[i]->val;
+            v[i - 1]->val += ‘v[i]->val;
         }
 
         return root;

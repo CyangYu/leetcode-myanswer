@@ -1,26 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "common.h"
 
-typedef unsigned char byte;
+USESTD 
 
-#define sw16(x) \
-    ((short)(\
-    (((short)(x) & (short)0x00ffU) << 8) | \
-    (((short)(x) & (short)0xff00U) >> 8)))
-
-void chToHex(byte val, char *dest)
-{
-    byte temp = val % 16;
-    if (temp >= 0 && temp <= 9)
-        dest[1] = '0' + temp;
-    else if (temp >= 10 && temp <= 15)
-        dest[1] = 'A' + temp - 10;
-    
-    temp = (val / 16) % 16;
-    if (temp >= 0 && temp <= 9)
-        dest[0] = '0' + temp;
-    else if (temp >= 10 && temp <= 15)
-        dest[0] = 'A' + temp - 10;
-    
-    dest[2] = '\0';
+int main(int argc, char *argv[]) {
+	char *str = (char *)malloc(12);
+	sprintf(str, "Hello World");
+	str[11] = '\0';
+	
+	printf("%p\n", str);
+	
+	string s = string(str);
+	const char *str1 = s.c_str();
+	
+	printf("%p\n", str1);
+	free(str);
+	return 0;
 }
