@@ -1,101 +1,59 @@
 #include <stdio.h>
-#include <stdlib.h> 
-#include <inttypes.h>
+#include <stdlib.h>
 
-typedef struct {
-	uint8_t *bytes;
-	int offset;
-	int legnth;
-} stream_t;
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
-typedef union {
-	uint8_t bytes[4];
-	int32_t int32;
-	uint32_t uint32;
-} union_int;
+#define STB_IMAGE_STATIC
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image_write.h"
 
-inline void read_uint32(stream_t *stream, union_int *ui) {
-	ui->bytes[0] = stream->bytes[stream->offset + 0];
-	ui->bytes[1] = stream->bytes[stream->offset + 1];
-	ui->bytes[2] = stream->bytes[stream->offset + 2];
-	ui->bytes[3] = stream->bytes[stream->offset + 3];
-	stream->offset += 4;
-}
-
-int extract_cmpt(stream_t *stream, const char *filename) {
-	if (stream == NULL || stream->bytes == NULL) {
-		return -1;	
-	}
-
-	union_int ui;
-	union_int *pui = &ui;
-
-	read_uint32(stream, pui);
-	uint32_t magic = ui.uint32;
-
-	read_uint32(stream, pui);
-	uint32_t version = ui.uint32;
-
-	read_uint32(stream, pui);
-	uint32_t total_len = ui.uint32;
-
-	FILE *fp = fopen(filename, "wb+");
-	if (fp == NULL) {
-		return -1;
-	}
-
-	stream->offset -= 12;
-	fwrite((stream->bytes + stream->offset), sizeof(uint8_t), total_len, fp);
-	fclose(fp);
-
-	stream->offset += total_len;
-	return 0;
-}
-
-int main(int argc, char *argv[]) {
-	const char *input = argv[1];
-
-	FILE *fp = fopen(input, "rb");
-	if (fp == NULL) {
+int main(int argc, char *argv[])
+{
+	if (argc < 3) 
+	{
+		fprintf(stderr, "please specify img.txt\n");
 		return EXIT_FAILURE;
 	}
 
-	fseek(fp, 0, SEEK_END);
-	long cmpt_size = ftell(fp);
-	fseek(fp, 0, SEEK_SET);
-
-	stream_t stream;
-	stream_t *pstream = &stream;
-
-	union_int ui;
-	union_int *pui = &ui;
-
-	stream.bytes = (uint8_t *)malloc(sizeof(uint8_t) * cmpt_size);
-	stream.offset = 0;
-	stream.legnth = cmpt_size;
-
-	fread(stream.bytes, sizeof(uint8_t), stream.legnth, fp);
+	const char *img_txt = argc[1];
 	
-	read_uint32(pstream, pui);
-	uint32_t magic = ui.uint32;
+	int line_count = 0;
+	int line_skip = atoi(argv[2]);
 
-	read_uint32(pstream, pui);
-	uint32_t version = ui.uint32;
+	FILE *img_file = fopen(img_txt, "r");
 
-	read_uint32(pstream, pui);
-	uint32_t total_len = ui.uint32;
-
-	read_uint32(pstream, pui);
-	uint32_t tiles_count = ui.uint32;
-
-	char *filename = (char *)malloc(sizeof(char) * 8);
-	
-	for (int i = 0; i < tiles_count; i++) {
-		sprintf(filename, "%d.b3dm", i);
-		extract_cmpt(pstream, filename);
+	if (img_file == NULL) 
+	{
+		fprintf(stderr, "open %s failed\n", img_txt);
+		return EXIT_FAILURE;
 	}
 
-	free(filename);
-	free(stream.bytes);
+	int width, height, channel;
+	char *line_buffer[128] = {'\0'};
+	
+	stbi_flip_vertically_on_write(1);
+
+	while (!feof(img_file))
+	{
+		fgets(line_buffer, 127, img_file);
+		line_count++;
+
+		if (line_count < line_skip)
+		{
+			continue;
+		}
+		
+		stb_uc *data = stbi_load(line_buffer, &width, &height, &channel, 0);
+		if (data != NULL) 
+		{
+			stbi_write_jpg(line_buffer, width, height, channel,
+                       data, 16);
+			stbi_image_free(data);
+
+			printf("%s\n", line_buffer);
+		}
+	}
+
 	return EXIT_SUCCESS;
 }

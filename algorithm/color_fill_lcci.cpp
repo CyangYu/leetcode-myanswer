@@ -11,33 +11,19 @@ public:
         int cols = image[0].size();
         if (cols == 0) return image;
 
-        vector<vector<bool>> records;
-        for (int r = 0; r < rows; r++) {
-            vector<bool> col;
-            for (int c = 0; c < cols; c++) {
-                col.push_back(false);
-            }
-            records.push_back(col);
-        }
-
-        fillColor(image, rows, cols, sr, sc, image[sr][sc], image[sr][sc], newColor, records);
+        fillColor(image, rows, cols, sr, sc, image[sr][sc], newColor);
         return image;
     }
 
-    void fillColor(vector<vector<int>> &image, int rows, int cols, int r, int c, int lastColor, int originColor, int newColor, vector<vector<bool>> &records) {
-        if (r < 0 || r == rows || c < 0 || c == cols || || records[r][c] == true) return;
+    void fillColor(vector<vector<int>> &image, int rows, int cols, int r, int c, int originColor, int newColor) {
+        if (r < 0 || r == rows || c < 0 || c == cols) return;
 
-        int color = image[r][c];
-        if (color == originColor && color == lastColor && color != newColor) {
+        if (image[r][c] == originColor && image[r][c] != newColor) {
             image[r][c] = newColor;
+            fillColor(image, rows, cols, r - 1, c, originColor, newColor);
+            fillColor(image, rows, cols, r + 1, c, originColor, newColor);
+            fillColor(image, rows, cols, r, c - 1, originColor, newColor);
+            fillColor(image, rows, cols, r, c + 1, originColor, newColor);
         }
-        
-        lastColor = color;
-        records[r][c] = true;
-        
-        fillColor(image, rows, cols, r - 1, c, originColor, lastColor, newColor, records);
-        fillColor(image, rows, cols, r + 1, c, originColor, lastColor, newColor, records);
-        fillColor(image, rows, cols, r, c - 1, originColor, lastColor, newColor, records);
-        fillColor(image, rows, cols, r, c + 1, originColor, lastColor, newColor, records);
     }
 };
